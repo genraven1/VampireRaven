@@ -42,6 +42,7 @@ public class RavenItemModelProvider extends ItemModelProvider {
     private void generateItemModels() {
         ModItems.getRawGemstones().forEach(item -> handheldItemBuilder(item.getCodeName(), item.getCodePath()));
         ModItems.getGemstones().forEach(item -> handheldItemBuilder(item.getCodeName(), item.getCodePath()));
+        ModItems.getBats().forEach(item -> handheldItemBuilder(item.getCodeName(), item.getCodePath()));
     }
 
     private void generateBlockModels() {
