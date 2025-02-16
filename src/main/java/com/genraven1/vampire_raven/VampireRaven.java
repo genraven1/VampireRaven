@@ -19,13 +19,11 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 @Mod(VampireRaven.MOD_ID)
-public class VampireRaven
-{
+public class VampireRaven {
     public static final String MOD_ID = "vampire_raven";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public VampireRaven()
-    {
+    public VampireRaven() {
         final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
