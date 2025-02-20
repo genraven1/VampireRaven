@@ -1,6 +1,7 @@
 package com.genraven1.vampire_raven;
 
 import com.genraven1.vampire_raven.block.ModBlocks;
+import com.genraven1.vampire_raven.block.entity.ModBlockEntities;
 import com.genraven1.vampire_raven.data.loot.global.ModLootModifiers;
 import com.genraven1.vampire_raven.item.ModItems;
 import com.genraven1.vampire_raven.recipes.ModRecipes;
@@ -34,6 +35,7 @@ public class VampireRaven {
     private void registerRegistries(final IEventBus eventBus) {
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModBlockEntities.register(eventBus);
         ModTileEntities.register(eventBus);
         ModLootModifiers.register(eventBus);
         ModRecipes.register(eventBus);

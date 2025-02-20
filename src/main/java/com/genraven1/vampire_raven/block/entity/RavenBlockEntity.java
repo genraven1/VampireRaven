@@ -1,9 +1,13 @@
 package com.genraven1.vampire_raven.block.entity;
 
+import com.genraven1.vampire_raven.util.BlockEntityUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 
 public abstract class RavenBlockEntity extends BlockEntity {
 
@@ -11,11 +15,18 @@ public abstract class RavenBlockEntity extends BlockEntity {
         super(type, worldPosition, blockState);
     }
 
-    public abstract String getCodeName();
+    @Override
+    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this, BlockEntity::saveWithFullMetadata);
+    }
 
-    public abstract String getEnglishName();
+    @Override
+    public @NotNull CompoundTag getUpdateTag() {
+        return this.saveWithFullMetadata();
+    }
 
-    public abstract String getLanguageCodeName();
-
-    public abstract String getCodePath();
+    public void markDirtyAndDispatch() {
+        super.setChanged();
+        BlockEntityUtils.dispatchToNearbyPlayers(this);
+    }
 }

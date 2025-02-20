@@ -1,6 +1,6 @@
 package com.genraven1.vampire_raven.tileentity;
 
-import com.genraven1.vampire_raven.util.TileEntityUtils;
+import com.genraven1.vampire_raven.util.BlockEntityUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -25,6 +25,6 @@ public abstract class RavenTileEntity extends BlockEntity {
 
     public void markDirtyAndDispatch() {
         super.setChanged();
-        TileEntityUtils.dispatchToNearbyPlayers(this);
+        BlockEntityUtils.dispatchToNearbyPlayers(this);
     }
 }

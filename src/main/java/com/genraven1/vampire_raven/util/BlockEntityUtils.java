@@ -5,8 +5,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
-public final class TileEntityUtils {
-    public static void dispatchToNearbyPlayers(BlockEntity tile) {
+public final class BlockEntityUtils {
+    public static void dispatchToNearbyPlayers(final BlockEntity tile) {
         var level = tile.getLevel();
         if (level == null)
             return;
@@ -15,16 +15,12 @@ public final class TileEntityUtils {
         if (packet == null)
             return;
 
-        var players = level.players();
         var pos = tile.getBlockPos();
 
-        for (var player : players) {
-            if (player instanceof ServerPlayer mPlayer) {
-                if (isPlayerNearby(mPlayer.getX(), mPlayer.getZ(), pos.getX() + 0.5, pos.getZ() + 0.5)) {
-                    mPlayer.connection.send(packet);
-                }
-            }
-        }
+        level.players().stream().filter(player -> player instanceof ServerPlayer)
+                .map(player -> (ServerPlayer) player)
+                .filter(mPlayer -> isPlayerNearby(mPlayer.getX(), mPlayer.getZ(), pos.getX() + 0.5, pos.getZ() + 0.5))
+                .forEach(mPlayer -> mPlayer.connection.send(packet));
     }
 
     public static void dispatchToNearbyPlayers(Level level, int x, int y, int z) {

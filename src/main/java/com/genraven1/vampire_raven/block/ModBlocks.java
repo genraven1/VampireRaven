@@ -1,6 +1,7 @@
 package com.genraven1.vampire_raven.block;
 
 import com.genraven1.vampire_raven.VampireRaven;
+import com.genraven1.vampire_raven.block.altar.BloodInfusionAltarBlock;
 import com.genraven1.vampire_raven.block.crop.BloodPlant;
 import com.genraven1.vampire_raven.block.crop.WeakBloodPlant;
 import com.genraven1.vampire_raven.item.ModItems;
@@ -50,10 +51,11 @@ public class ModBlocks {
         return List.of(BAT_HOUSE.get());
     }
 
-    private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<T> block) {
-        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+    public static final RegistryObject<RavenBlockEntityBlock> BLOOD_INFUSION_ALTAR = registerBlock(BloodInfusionAltarBlock.CODE_NAME, BloodInfusionAltarBlock::new);
+
+    public static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<T> block) {
         ModItems.ITEMS.register(name, () -> new RavenBlockItem(block.get()));
-        return toReturn;
+        return BLOCKS.register(name, block);
     }
 
     public static void register(final IEventBus eventBus) {
