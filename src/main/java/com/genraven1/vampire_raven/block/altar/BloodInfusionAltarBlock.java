@@ -2,6 +2,7 @@ package com.genraven1.vampire_raven.block.altar;
 
 import com.genraven1.vampire_raven.block.RavenBlockEntityBlock;
 import com.genraven1.vampire_raven.block.entity.BloodInfusionAltarBlockEntity;
+import com.genraven1.vampire_raven.util.RavenUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -28,12 +29,12 @@ public class BloodInfusionAltarBlock extends RavenBlockEntityBlock {
 
     @Override
     public String getLanguageCodeName() {
-        return "";
+        return RavenUtils.LANG_BLOCK + CODE_NAME;
     }
 
     @Override
     public String getCodePath() {
-        return "";
+        return RavenUtils.BLOCK_PATH + CODE_NAME;
     }
 
     @Override

@@ -4,7 +4,6 @@ import com.genraven1.vampire_raven.VampireRaven;
 import com.genraven1.vampire_raven.block.ModBlocks;
 import com.genraven1.vampire_raven.block.RavenBlockEntityBlock;
 import com.genraven1.vampire_raven.block.altar.BloodInfusionAltarBlock;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,7 +22,6 @@ public class ModBlockEntities {
                     () -> BlockEntityType.Builder.of(BatHouseBlockEntity::new, ModBlocks.BAT_HOUSE.get()).build(null));
 
     private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> registerBlockEntity(final String codeName, BlockEntityType.BlockEntitySupplier<T> supplier, RavenBlockEntityBlock block) {
-//        ModBlocks.registerBlock(codeName, )
         return BLOCK_ENTITIES.register(codeName, () -> BlockEntityType.Builder.of(supplier, block).build(null));
     }
 
