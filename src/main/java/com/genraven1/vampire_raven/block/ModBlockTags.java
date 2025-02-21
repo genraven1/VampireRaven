@@ -2,6 +2,7 @@ package com.genraven1.vampire_raven.block;
 
 import com.genraven1.vampire_raven.block.crop.BloodPlant;
 import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 

@@ -1,5 +1,7 @@
-package com.genraven1.vampire_raven.block.entity;
+package com.genraven1.vampire_raven.block.entity.altar;
 
+import com.genraven1.vampire_raven.block.entity.ModBlockEntities;
+import com.genraven1.vampire_raven.block.entity.RavenInventoryBlockEntity;
 import com.genraven1.vampire_raven.tileentity.RavenItemStackHandler;
 import lombok.Getter;
 import net.minecraft.core.BlockPos;

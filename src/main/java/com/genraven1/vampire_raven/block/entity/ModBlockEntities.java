@@ -4,6 +4,8 @@ import com.genraven1.vampire_raven.VampireRaven;
 import com.genraven1.vampire_raven.block.ModBlocks;
 import com.genraven1.vampire_raven.block.RavenBlockEntityBlock;
 import com.genraven1.vampire_raven.block.altar.BloodInfusionAltarBlock;
+import com.genraven1.vampire_raven.block.entity.altar.BloodInfusionAltarBlockEntity;
+import com.genraven1.vampire_raven.block.entity.house.BatHouseBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;

@@ -1,7 +1,7 @@
 package com.genraven1.vampire_raven.block.altar;
 
 import com.genraven1.vampire_raven.block.RavenBlockEntityBlock;
-import com.genraven1.vampire_raven.block.entity.BloodInfusionAltarBlockEntity;
+import com.genraven1.vampire_raven.block.entity.altar.BloodInfusionAltarBlockEntity;
 import com.genraven1.vampire_raven.util.RavenUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;

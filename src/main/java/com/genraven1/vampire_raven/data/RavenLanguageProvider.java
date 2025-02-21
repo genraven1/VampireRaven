@@ -2,9 +2,11 @@ package com.genraven1.vampire_raven.data;
 
 import com.genraven1.vampire_raven.VampireRaven;
 import com.genraven1.vampire_raven.block.ModBlocks;
+import com.genraven1.vampire_raven.block.RavenBlock;
 import com.genraven1.vampire_raven.item.ModItems;
 import com.genraven1.vampire_raven.item.VampireRavenCreativeTab;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 
 public class RavenLanguageProvider extends LanguageProvider {
@@ -31,5 +33,10 @@ public class RavenLanguageProvider extends LanguageProvider {
         ModBlocks.getMushroomPotBlocks().forEach(mushroomPot -> add(mushroomPot.getLanguageCodeName(), mushroomPot.getEnglishName()));
         ModBlocks.getMushroomPottedBlocks().forEach(mushroomPot -> add(mushroomPot.getLanguageCodeName(), mushroomPot.getEnglishName()));
         ModBlocks.getBloodPlants().forEach(bloodPlant -> add(bloodPlant.getLanguageCodeName(), bloodPlant.getEnglishName()));
+        addSingleBlockTranslation(ModBlocks.BLOOD_INFUSION_ALTAR.get());
+    }
+
+    private void addSingleBlockTranslation(final RavenBlock block) {
+        add(block.getLanguageCodeName(), block.getEnglishName());
     }
 }

@@ -4,6 +4,7 @@ import com.genraven1.vampire_raven.VampireRaven;
 import com.genraven1.vampire_raven.block.altar.BloodInfusionAltarBlock;
 import com.genraven1.vampire_raven.block.crop.BloodPlant;
 import com.genraven1.vampire_raven.block.crop.WeakBloodPlant;
+import com.genraven1.vampire_raven.block.house.BatHouseBlock;
 import com.genraven1.vampire_raven.item.ModItems;
 import com.genraven1.vampire_raven.item.block.RavenBlockItem;
 import net.minecraft.world.level.block.Block;

@@ -1,7 +1,9 @@
-package com.genraven1.vampire_raven.block;
+package com.genraven1.vampire_raven.block.house;
 
-import com.genraven1.vampire_raven.block.entity.BatHouseBlockEntity;
+import com.genraven1.vampire_raven.block.RavenBaseEntityBlock;
+import com.genraven1.vampire_raven.block.entity.house.BatHouseBlockEntity;
 import com.genraven1.vampire_raven.block.entity.ModBlockEntities;
+import lombok.NoArgsConstructor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -17,10 +19,8 @@ import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+@NoArgsConstructor
 public class BatHouseBlock extends RavenBaseEntityBlock {
-    protected BatHouseBlock() {
-        super();
-    }
 
     public static final String CODE_NAME = "bat_house";
 

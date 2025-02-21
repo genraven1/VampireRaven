@@ -2,6 +2,7 @@ package com.genraven1.vampire_raven.data;
 
 import com.genraven1.vampire_raven.VampireRaven;
 import com.genraven1.vampire_raven.block.ModBlocks;
+import com.genraven1.vampire_raven.block.RavenBlock;
 import com.genraven1.vampire_raven.item.ModItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -50,5 +51,10 @@ public class RavenItemModelProvider extends ItemModelProvider {
         ModBlocks.getMushroomPotBlocks().forEach(mushroomPot -> registerItemBlockModels(mushroomPot.getCodeName(), mushroomPot.getCodePath()));
         ModBlocks.getMushroomPottedBlocks().forEach(pottedMushroom -> registerItemBlockModels(pottedMushroom.getCodeName(), pottedMushroom.getCodePath()));
         ModBlocks.getBloodPlants().forEach(bloodPlant -> registerItemBlockModels(bloodPlant.getCodeName(), bloodPlant.getCodePath()));
+        generateSingleBlockModels(ModBlocks.BLOOD_INFUSION_ALTAR.get());
+    }
+
+    private void generateSingleBlockModels(final RavenBlock block) {
+        registerItemBlockModels(block.getCodeName(), block.getCodePath());
     }
 }
